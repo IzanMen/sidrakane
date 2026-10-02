@@ -1,0 +1,16 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Home from '../components/Home.astro';
+import ContentPage from '../components/ContentPage.astro';
+import {routes,titles,descriptions} from '../data/content';
+export function getStaticPaths(){
+ return [{params:{slug:'en'},props:{lang:'en',page:'home'}},...routes.flatMap(page=>[{params:{slug:page},props:{lang:'es',page}},{params:{slug:'en/'+page},props:{lang:'en',page}}])];
+}
+const {lang,page}=Astro.props;
+const en=lang==='en';
+const alternate=page==='home'?'/':en?'/'+page+'/':'/en/'+page+'/';
+const title=page==='home'?'Sidra Kane · Menorca, at a slower pace':titles[page][en?1:0]+' · Sidra Kane';
+const description=page==='home'?'Explore Sidra Kane at Sa Marjal Vella. Estate tour, history and guided tasting with local produce. 90 minutes, €30 per person. Book your Menorca experience.':descriptions[page][en?1:0];
+const imageMap:Record<string,string>={home:'hero',visita:'estate',historia:'origin',patrimonio:'heritage',coleccion:'spritz',colaboraciones:'night',contacto:'estate',privacidad:'hero'};
+---
+<Layout title={title} description={description} lang={lang} alternate={alternate} image={'/images/'+imageMap[page]+'.webp'}>{page==='home'?<Home lang={lang}/>:<ContentPage lang={lang} page={page}/>}</Layout>
