@@ -5,7 +5,7 @@ import '@fontsource/instrument-serif/latin-400.css';
 import '@fontsource/instrument-serif/latin-400-italic.css';
 import '../styles/global.css';
 interface Props { title?:string; description?:string; lang?:string; alternate?:string; image?:string; }
-const {title='Sidra Kane · Menorca, a otro ritmo',description='Descubre Sidra Kane en Sa Marjal Vella: visita al caserío, historia y cata con producto menorquín. 90 minutos, 30 € por persona. Reserva tu experiencia en Menorca.',lang='es',alternate='/en/',image='/og.png'}=Astro.props;
+const {title='Sidra Kane · Visita y cata de sidra en Menorca',description='Visita Sidra Kane en Sa Marjal Vella, Menorca. Recorrido por el caserío y cata con producto local. 90 minutos, 30 € por persona. Niños hasta 12 años gratis.',lang='es',alternate='/en/',image='/og.png'}=Astro.props;
 const en=lang==='en';
 const root=en?'/en/':'/';
 const canonical=new URL(Astro.url.pathname,Astro.site);
@@ -27,7 +27,7 @@ const imageUrl=new URL(image,Astro.site).href;
   <a class="skip-link" href="#main">{en?'Skip to content':'Saltar al contenido'}</a>
   <Header lang={lang} alternate={alternate} client:load/>
   <main id="main"><slot/></main>
-  <footer class="site-footer"><div class="footer-top"><a class="wordmark" href={root}><span>KANE<span class="logo-star" aria-hidden="true">✳</span></span><small>SIDRA · MENORCA</small></a><p>{en?'British heritage.':'Herencia británica.'}<br/><em>{en?'Mediterranean soul.':'Alma mediterránea.'}</em></p><a href={root+'visita/'} class="footer-link">{en?'Come and discover us':'Ven a conocernos'} <span aria-hidden="true">↗</span></a></div><div class="footer-bottom"><span>© {new Date().getFullYear()} Sidra Kane</span><nav aria-label={en?'Footer navigation':'Navegación del pie'}><a href={root+'patrimonio/'}>{en?'Heritage':'Patrimonio'}</a><a href={root+'colaboraciones/'}>{en?'Collaborations':'Colaboraciones'}</a><a href={root+'contacto/'}>{en?'Contact':'Contacto'}</a><a href={root+'privacidad/'}>{en?'Privacy':'Privacidad'}</a></nav><span>Sa Marjal Vella · Menorca</span></div></footer>
-  <a class="mobile-booking" href={root+'visita/'}><span>{en?'Visit & tasting':'Visita y cata'} <b>30 €</b></span><strong>{en?'Book your visit':'Reserva tu visita'} <span aria-hidden="true">↗</span></strong></a>
+  <footer class="site-footer"><div class="footer-top"><a class="wordmark" href={root}><span>KANE<span class="logo-star" aria-hidden="true">✳</span></span><small>SIDRA · MENORCA</small></a><p>{en?'Craft cider.':'Sidra artesanal.'}<br/><em>Sa Marjal Vella, Menorca.</em></p><a href={root+'visita/#reserva'} class="footer-link">{en?'Book a visit':'Reservar visita'} <span aria-hidden="true">↗</span></a></div><div class="footer-bottom"><span>© {new Date().getFullYear()} Sidra Kane</span><nav aria-label={en?'Footer navigation':'Navegación del pie'}><a href={root+'patrimonio/'}>{en?'Heritage':'Patrimonio'}</a><a href={root+'colaboraciones/'}>{en?'Collaborations':'Colaboraciones'}</a><a href={root+'contacto/'}>{en?'Contact':'Contacto'}</a><a href={root+'privacidad/'}>{en?'Privacy':'Privacidad'}</a></nav><span>Sa Marjal Vella · Menorca</span></div></footer>
+  <a class="mobile-booking" href={root+'visita/#reserva'}><span>{en?'Visit & tasting':'Visita y cata'} <b>30 €</b></span><strong>{en?'Book your visit':'Reserva tu visita'} <span aria-hidden="true">↗</span></strong></a>
 </body>
 </html>

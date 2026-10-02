@@ -4,7 +4,7 @@ Investigación realizada el 2 de octubre de 2026. La web original y su reserva s
 
 ## Objetivo y recorrido
 
-Objetivo principal: convertir el interés por Menorca y la sidra en visitas reservadas a Sa Marjal Vella. La portada responde a qué se puede vivir, cuánto cuesta y cuánto dura. La página de experiencia detalla lo incluido y dirige al calendario existente. El contacto reúne ubicación y consultas para casos específicos.
+Objetivo principal: convertir el interés por Menorca y la sidra en visitas reservadas a Sa Marjal Vella. La portada explica qué es Sidra Kane, dónde se realiza la visita, qué incluye, cuánto cuesta y cuánto dura. La página de experiencia detalla lo incluido y dirige al calendario existente. El contacto reúne ubicación y consultas para casos específicos.
 
 Recorrido: portada → experiencia → calendario oficial. Alternativa: consulta por WhatsApp con número de visitantes y fecha opcional, sin enviar automáticamente el mensaje ni simular una reserva confirmada.
 
@@ -20,7 +20,7 @@ Recorrido: portada → experiencia → calendario oficial. Alternativa: consulta
 - Radix, https://www.radix-ui.com/primitives/docs/overview/accessibility : contraste, semántica, navegación por teclado y gestión del foco como requisitos de los componentes, no como ornamentación.
 - Astro, https://docs.astro.build/en/guides/integrations-guide/react/ : páginas estáticas y pequeñas islas para menú, preguntas y planificación; el contenido principal llega como HTML.
 
-Se evitan carruseles automáticos y vídeos pesados en la primera pantalla. Los datos de precio, duración y gratuidad infantil son visibles. La acción de reserva persiste en móvil. Tipografía Instrument Serif y DM Sans, fuentes locales; crema, oliva y terracota, superficies planas y fotografía a gran escala.
+Se evitan carruseles automáticos y vídeos pesados en la primera pantalla. Los datos de precio, duración y gratuidad infantil son visibles. La acción de reserva persiste en móvil. Tipografía Instrument Serif y DM Sans, fuentes locales; crema, oliva y terracota, superficies planas e imágenes con altura acotada. El hero usa una imagen horizontal de Sa Marjal Vella, un título directo y precio, duración y gratuidad infantil agrupados bajo la acción de reserva. El contenido se alinea a una anchura máxima compartida de 1360 px; la imagen del hero se limita a 414 px en escritorio y a una proporción 3:2 en móvil. Los textos de cuerpo tienen 16–17 px; navegación y datos principales, 14 px o más. Se han eliminado los eslóganes abstractos de ambas versiones idiomáticas y el bloque de portada repetido sobre el caserío.
 
 ## Fuentes y datos verificados
 
@@ -52,7 +52,7 @@ Se revisaron las siete páginas enlazadas en la navegación original (inicio, vi
 
 | Mes / archivo original | Información / uso |
 | --- | --- |
-| 05/Intro-1.png | Herencia británica, alma mediterránea; imagen de botellas. Recorte para portada. |
+| 05/Intro-1.png | Herencia británica, alma mediterránea; imagen de botellas. Recorte de botellas, conservado como recurso de marca. |
 | 05/ChatGPT-Image-31-may-2026-15_08_07.png | Historia completa de la poma d’en Kane. Recorte de la manzana. |
 | 05/notas-de-cosecha.png | Datos de cosecha y perfil sensorial. Recorte de las manzanas. |
 | 05/visitar.png | Horarios de verano, niños y grupos. Texto convertido a HTML. |
@@ -71,7 +71,7 @@ Se revisaron las siete páginas enlazadas en la navegación original (inicio, vi
 | 05/jabones.png | Jabones y velas. Imagen de colección. |
 | 06/Kane-Spritz.png | Kane Spritz. Imagen de colección. |
 | 05/cosmeticos.png | Cosméticos orgánicos. Imagen de colección. |
-| 05/excepcion.png | En una isla de vino nació una sidra; mensaje incorporado a historia. |
+| 05/excepcion.png | Imagen promocional; la página de historia explica el origen de la marca con datos directos. |
 | 05/Origen.png | Año 2021, conversación inicial y primera bodega en Ciutadella. Recorte visual. |
 | 06/Heritage.png | Versión inglesa del mensaje de portada. |
 | 06/Story.png | Versión inglesa de la historia de la manzana. |
@@ -84,7 +84,7 @@ Las imágenes proceden del material ya utilizado por Kane, incluido material de 
 
 ## Tarjeta para compartir
 
-public/og.png se ha generado mediante la herramienta integrada ImageGen, y solo se usa como tarjeta social. No muestra una finca inventada ni un producto nuevo. Prompt: tarjeta editorial horizontal crema #f6f3e9, tipografía serif oliva #333f29, acento terracota #af472b, rama de manzano a la derecha y luz mediterránea; texto exacto “Sidra Kane”, “Menorca, a otro ritmo.” y “Visita · Historia · Cata”.
+public/og.png se ha actualizado mediante ImageGen a partir de la imagen de Sa Marjal Vella ya utilizada por Kane. Composición horizontal: texto editorial a la izquierda e imagen del caserío a la derecha; crema #f6f3e9, oliva #333f29 y acento terracota #af472b. Texto exacto: “SIDRA KANE”, “Visita y cata de sidra en Menorca” y “Sa Marjal Vella · 90 minutos · 30 € por persona”. Se inspeccionó el resultado para comprobar el texto antes de integrarlo.
 
 ## Antes de reemplazar la web comercial
 

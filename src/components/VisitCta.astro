@@ -2,4 +2,7 @@
 import { ArrowUpRight } from 'lucide-react';
 const {lang='es'}=Astro.props;const en=lang==='en';const root=en?'/en/':'/';
 ---
-<section class="visit-cta"><div><p class="eyebrow">{en?'THERE’S ANOTHER SIDE TO MENORCA':'HAY OTRA MENORCA'}</p><h2>{en?'Come for the cider.':'Ven por la sidra.'}<br/><em>{en?'Stay for the moment.':'Quédate con el momento.'}</em></h2><p>{en?'90 minutes to slow down, discover and taste.':'90 minutos para bajar el ritmo, descubrir y saborear.'}</p><a class="button" href={root+'visita/'}>{en?'Plan your visit':'Planifica tu visita'}<ArrowUpRight size={20}/></a></div><div class="cta-price"><span>30 €</span><small>{en?'PER PERSON':'POR PERSONA'}</small><p>{en?'Children up to 12 visit free':'Niños hasta 12 años, gratis'}</p></div></section>
+<section class="visit-cta">
+  <div><p class="eyebrow">{en?'VISIT & CIDER TASTING':'VISITA Y CATA DE SIDRA'}</p><h2>{en?'Visit the estate.':'Visita el caserío.'}<br/><em>{en?'Taste Sidra Kane.':'Prueba Sidra Kane.'}</em></h2><p>{en?'90-minute tour and tasting with seasonal local food. Advance booking required.':'90 minutos de recorrido y cata con producto local de temporada. Es necesario reservar.'}</p><a class="button" href={root+'visita/#reserva'}>{en?'Book a visit':'Reservar visita'}<ArrowUpRight size={20}/></a></div>
+  <div class="cta-price"><span>30 €</span><small>{en?'PER PERSON':'POR PERSONA'}</small><p>{en?'Children up to 12: free':'Niños hasta 12 años: gratis'}</p></div>
+</section>
