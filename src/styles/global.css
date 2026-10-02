@@ -76,7 +76,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .eyebrow { font-size: 12px; letter-spacing: 1.5px; line-height: 1.5; font-weight: 500; text-transform: uppercase; display: flex; gap: 10px; align-items: center; }
 
 /* The image is independent of its source dimensions and cannot stretch the row. */
-.hero { width: min(calc(100% - var(--page-gutter) * 2), 1360px); margin: 0 auto; display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; padding: 48px 0 42px; align-items: center; }
+.hero { width: min(calc(100% - var(--page-gutter) * 2), 1360px); min-height: calc(100vh - 88px); min-height: calc(100dvh - 88px); margin: 0 auto; display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; padding: 44px 0; align-items: center; }
 .hero-copy { min-width: 0; }
 .hero h1 { font-family: var(--serif); font-size: clamp(50px, 4.6vw, 76px); line-height: 1.03; letter-spacing: -1.5px; margin: 20px 0 22px; }
 .hero-description { font-size: 17px; line-height: 1.65; max-width: 510px; margin-bottom: 26px; color: var(--muted-foreground); }
@@ -320,7 +320,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 @media (max-width: 850px) {
-  .hero { grid-template-columns: 1fr; gap: 28px; padding: 36px 0; }
+  .hero { grid-template-columns: 1fr; gap: 28px; padding: 34px 0; }
   .hero-copy { max-width: 650px; }
   .hero h1 { font-size: 64px; }
   .hero-description { max-width: 580px; font-size: 17px; }
@@ -373,7 +373,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   .wordmark small { font-size: 9px; letter-spacing: 1.5px; margin-top: 7px; }
   .header-actions { gap: 18px; }
   .header-book { display: none; }
-  .hero { gap: 24px; padding: 30px 0; }
+  .hero { min-height: calc(100vh - 76px); min-height: calc(100dvh - 76px); gap: 24px; padding: 28px 0 104px; align-content: center; }
   .hero h1 { font-size: clamp(42px,10.8vw,60px); line-height: 1.04; letter-spacing: -.8px; margin: 18px 0; }
   .hero .eyebrow { font-size: 11px; letter-spacing: 1.3px; }
   .hero-description { font-size: 16px; line-height: 1.6; margin-bottom: 22px; }
