@@ -156,7 +156,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .faq-content { height: auto !important; padding: 0 32px 22px 0 !important; font-size: 16px; line-height: 1.7; color: var(--muted-foreground); }
 
 /* Page headings follow the same measure and image constraints as the homepage. */
-.page-hero { display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; padding: 36px var(--page-inset) 48px; align-items: center; }
+.page-hero { min-height: calc(100vh - 88px); min-height: calc(100dvh - 88px); display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; padding: 44px var(--page-inset); align-items: center; }
 .page-hero > div:first-child { min-width: 0; }
 .breadcrumb { font-size: 13px; color: var(--muted-foreground); margin-bottom: 28px; display: block; line-height: 1.5; }
 .breadcrumb span { padding: 0 8px; }
@@ -234,7 +234,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .conservation-grid > div { border-top: 1px solid #333f2940; padding-top: 18px; }
 .conservation-grid span { font-size: 13px; color: var(--muted-foreground); }
 .conservation-grid h3 { font-family: var(--serif); font-size: 32px; line-height: 1.2; margin-top: 14px; }
-.collection-hero { text-align: center; padding-top: 54px; padding-bottom: 48px; }
+.collection-hero { min-height: calc(100vh - 88px); min-height: calc(100dvh - 88px); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding-top: 44px; padding-bottom: 44px; }
 .collection-hero .eyebrow { justify-content: center; }
 .collection-hero h1 { font-family: var(--serif); font-size: clamp(48px,5vw,76px); line-height: 1.05; letter-spacing: -1px; margin: 20px 0 22px; }
 .collection-hero > p:not(.eyebrow) { font-size: 17px; line-height: 1.7; max-width: 630px; margin: 0 auto; color: var(--muted-foreground); }
@@ -267,11 +267,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .arrival-section li > span { font-size: 13px; color: var(--terracotta); margin-top: 6px; }
 .arrival-section li h3 { font-family: var(--serif); font-size: 30px; line-height: 1.2; }
 .arrival-section li p { font-size: 17px; line-height: 1.7; margin-top: 12px; color: var(--muted-foreground); }
-.privacy-content { max-width: 880px; padding-inline: var(--page-gutter); margin: 0 auto; }
+.privacy-content { min-height: calc(100vh - 88px); min-height: calc(100dvh - 88px); max-width: 880px; padding-inline: var(--page-gutter); margin: 0 auto; }
 .privacy-content h1 { font-family: var(--serif); font-size: 64px; line-height: 1.1; margin: 22px 0 36px; }
 .privacy-content h2 { font-size: 32px; margin: 28px 0 14px; letter-spacing: 0; }
 .privacy-content > p:not(.eyebrow) { font-size: 17px; color: var(--muted-foreground); line-height: 1.75; margin-bottom: 20px; }
-.not-found { min-height: 480px; text-align: center; }
+.not-found { min-height: calc(100vh - 88px); min-height: calc(100dvh - 88px); text-align: center; }
 .not-found .eyebrow { justify-content: center; }
 .not-found h1 { font-family: var(--serif); font-size: 76px; line-height: 1; margin: 24px 0; }
 .not-found > p:not(.eyebrow) { font-size: 17px; margin: 0 auto 26px; max-width: 550px; color: var(--muted-foreground); }
@@ -421,7 +421,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   .faq-section > div > p:not(.eyebrow) { font-size: 16px; margin: 18px 0; }
   .faq-trigger { font-size: 16px !important; padding: 20px 0 !important; }
   .faq-content { font-size: 16px; padding-right: 24px !important; }
-  .page-hero { grid-template-columns: 1fr; gap: 26px; padding-block: 24px 32px; }
+  .page-hero { min-height: calc(100vh - 76px); min-height: calc(100dvh - 76px); grid-template-columns: 1fr; gap: 26px; padding-block: 28px 104px; align-content: center; }
   .breadcrumb { margin-bottom: 24px; font-size: 13px; }
   .page-hero h1 { font-size: clamp(42px,11vw,60px); letter-spacing: -.6px; margin: 18px 0; }
   .page-hero p:not(.eyebrow) { font-size: 16px; line-height: 1.65; }
@@ -452,7 +452,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   .editorial-callout { padding: 20px; font-size: 16px; }
   .conservation-grid { grid-template-columns: 1fr 1fr; gap: 26px 22px; margin-top: 28px; }
   .conservation-grid h3 { font-size: 27px; margin-top: 12px; }
-  .collection-hero { padding-top: 36px; padding-bottom: 36px; }
+  .collection-hero { min-height: calc(100vh - 76px); min-height: calc(100dvh - 76px); padding-top: 28px; padding-bottom: 104px; }
   .collection-hero h1 { font-size: clamp(42px,11vw,60px); }
   .collection-hero > p:not(.eyebrow) { font-size: 16px; }
   .collection-notice { font-size: 14px; padding: 11px 14px; }
@@ -473,7 +473,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   .arrival-section li p { font-size: 16px; }
   .privacy-content h1 { font-size: 46px; margin-bottom: 28px; }
   .privacy-content > p:not(.eyebrow) { font-size: 16px; }
-  .not-found { min-height: 420px; }
+  .privacy-content, .not-found { min-height: calc(100vh - 76px); min-height: calc(100dvh - 76px); }
   .not-found h1 { font-size: 56px; }
   .not-found > p:not(.eyebrow) { font-size: 16px; }
   .site-footer { padding-block: 36px 28px; }
