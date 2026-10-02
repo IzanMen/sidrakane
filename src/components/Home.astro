@@ -3,8 +3,8 @@ import {ArrowUpRight,ArrowDown,MapPin,Clock,Ticket} from 'lucide-react';
 import {experienceSteps,products,txt} from '../data/content';
 import Faq from './Faq';
 import VisitCta from './VisitCta.astro';
-const {lang='es'}=Astro.props;
-const en=lang==='en';const root=en?'/en/':'/';
+const {lang='es',base}=Astro.props;
+const en=lang==='en';const root=base || (en?'/en/':'/');
 ---
 <section class="hero">
   <div class="hero-copy">
@@ -60,7 +60,7 @@ const en=lang==='en';const root=en?'/en/':'/';
   <p>{en?'Each bottle helps fund conservation':'Cada botella ayuda a financiar la conservación'}<br/><em>{en?'of the San Felipe apple.':'de la Manzana de San Felipe.'}</em></p>
   <a class="text-link" href={root+'patrimonio/'}>{en?'Read about the conservation project':'Conoce el proyecto de conservación'}<ArrowUpRight size={18}/></a>
 </section>
-<VisitCta lang={lang}/>
+<VisitCta lang={lang} base={root}/>
 <section class="section faq-section">
   <div><p class="eyebrow">{en?'PRACTICAL INFORMATION':'INFORMACIÓN PRÁCTICA'}</p><h2>{en?'Before':'Antes de'}<br/><em>{en?'your visit.':'tu visita.'}</em></h2><p>{en?'Price, duration, booking and location. If you need more information, contact us on WhatsApp.':'Precio, duración, reserva y ubicación. Si necesitas más información, escríbenos por WhatsApp.'}</p><a class="text-link" href="https://wa.me/34722258029" target="_blank" rel="noopener noreferrer">{en?'Contact us on WhatsApp':'Contactar por WhatsApp'}<ArrowUpRight size={18}/></a></div>
   <Faq lang={lang} client:visible/>

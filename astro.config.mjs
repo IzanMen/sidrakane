@@ -3,7 +3,7 @@ import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 import { sites } from '@openai/sites-vite-plugin';
 export default defineConfig({
-  site: process.env.SITE_URL || 'https://sidrakane.com',
+  site: process.env.SITE_URL || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'https://sidrakane.com'),
   output: 'static',
   outDir: './dist/client',
   trailingSlash: 'always',

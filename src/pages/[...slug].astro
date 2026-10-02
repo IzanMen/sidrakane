@@ -4,13 +4,21 @@ import Home from '../components/Home.astro';
 import ContentPage from '../components/ContentPage.astro';
 import {routes,titles,descriptions} from '../data/content';
 export function getStaticPaths(){
- return [{params:{slug:'en'},props:{lang:'en',page:'home'}},...routes.flatMap(page=>[{params:{slug:page},props:{lang:'es',page}},{params:{slug:'en/'+page},props:{lang:'en',page}}])];
+ return [
+  {params:{slug:'es'},props:{lang:'es',page:'home',base:'/es/'}},
+  {params:{slug:'en'},props:{lang:'en',page:'home',base:'/en/'}},
+  ...routes.flatMap(page=>[
+   {params:{slug:page},props:{lang:'es',page,base:'/'}},
+   {params:{slug:'es/'+page},props:{lang:'es',page,base:'/es/'}},
+   {params:{slug:'en/'+page},props:{lang:'en',page,base:'/en/'}}
+  ])
+ ];
 }
-const {lang,page}=Astro.props;
+const {lang,page,base='/'}=Astro.props;
 const en=lang==='en';
-const alternate=page==='home'?'/':en?'/'+page+'/':'/en/'+page+'/';
-const title=page==='home'?'Sidra Kane · Visit & cider tasting in Menorca':titles[page][en?1:0]+' · Sidra Kane';
-const description=page==='home'?'Visit Sidra Kane at Sa Marjal Vella, Menorca. Estate tour and cider tasting with local food. 90 minutes, €30 per person. Children up to 12 visit free.':descriptions[page][en?1:0];
+const alternate=en?(page==='home'?'/es/':'/es/'+page+'/'):(page==='home'?'/en/':'/en/'+page+'/');
+const title=page==='home'?(en?'Sidra Kane · Visit & cider tasting in Menorca':'Sidra Kane · Visita y cata de sidra en Menorca'):titles[page][en?1:0]+' · Sidra Kane';
+const description=page==='home'?(en?'Visit Sidra Kane at Sa Marjal Vella, Menorca. Estate tour and cider tasting with local food. 90 minutes, €30 per person. Children up to 12 visit free.':'Visita Sidra Kane en Sa Marjal Vella, Menorca. Recorrido por el caserío y cata con producto local. 90 minutos, 30 € por persona. Niños hasta 12 años gratis.'):descriptions[page][en?1:0];
 const imageMap:Record<string,string>={home:'estate',visita:'estate',historia:'origin',patrimonio:'heritage',coleccion:'spritz',colaboraciones:'night',contacto:'estate',privacidad:'hero'};
 ---
-<Layout title={title} description={description} lang={lang} alternate={alternate} image={'/images/'+imageMap[page]+'.webp'}>{page==='home'?<Home lang={lang}/>:<ContentPage lang={lang} page={page}/>}</Layout>
+<Layout title={title} description={description} lang={lang} alternate={alternate} image={'/images/'+imageMap[page]+'.webp'} base={base}>{page==='home'?<Home lang={lang} base={base}/>:<ContentPage lang={lang} page={page} base={base}/>}</Layout>

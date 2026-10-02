@@ -3,9 +3,9 @@ import { ArrowUpRight, Menu, X } from 'lucide-react';
 import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription, DialogClose } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 
-export default function Header({lang='es', alternate='/en/'}: {lang?:string; alternate?:string}) {
+export default function Header({lang='es', alternate='/en/', base}: {lang?:string; alternate?:string; base?:string}) {
   const en=lang==='en';
-  const root=en?'/en/':'/';
+  const root=base || (en?'/en/':'/');
   const [open,setOpen]=useState(false);
   const links=[{label:en?'The visit':'La visita',href:root+'visita/'},{label:en?'Our story':'Nuestra historia',href:root+'historia/'},{label:en?'Kane collection':'Colección Kane',href:root+'coleccion/'},{label:en?'Find us':'Cómo llegar',href:root+'contacto/'}];
   return <header className="site-header">
